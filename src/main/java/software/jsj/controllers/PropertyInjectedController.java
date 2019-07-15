@@ -4,6 +4,7 @@
 package software.jsj.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import software.jsj.services.GreetingService;
 
@@ -19,7 +20,7 @@ public class PropertyInjectedController {
    *  to camelCase of the implementation class, e.g. greetingServiceImpl 
    */
   @Autowired
-  //@Qualifier("greetingServiceImpl")
+  @Qualifier("greetingServiceImpl")
   public GreetingService greetingServiceImpl;
   
   public String sayHello() {
