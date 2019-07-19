@@ -8,4 +8,15 @@ jsj:
     password: GollumPassword99
     url: www.dictionary.example.com
 
- 
+
+--- #File separator
+spring:
+  profiles: de
+jsj:
+    username: "John $$$ IN $$$ German"
+   
+--- 
+spring:
+  profiles: es
+jsj:
+    username: "de Jesus &&& IN &&& Spanish"  
