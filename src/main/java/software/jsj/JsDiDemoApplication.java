@@ -7,6 +7,7 @@ import software.jsj.controllers.ConstructorInjectedController;
 import software.jsj.controllers.MyController;
 import software.jsj.controllers.PropertyInjectedController;
 import software.jsj.controllers.SetterInjectedController;
+import software.jsj.examplebeans.FakeDataSource;
 
 @SpringBootApplication
 public class JsDiDemoApplication {
@@ -16,11 +17,17 @@ public class JsDiDemoApplication {
 		
 		MyController controller = (MyController)ctx.getBean("myController");
 		
-		System.out.println(controller.hello());
+		/*System.out.println(controller.hello());
 		
 		System.out.println(ctx.getBean(PropertyInjectedController.class).sayHello());
 		System.out.println(ctx.getBean(SetterInjectedController.class).sayHello());
-		System.out.println(ctx.getBean(ConstructorInjectedController.class).sayHello());
+		System.out.println(ctx.getBean(ConstructorInjectedController.class).sayHello());*/
+		
+		FakeDataSource fakeDataSource = (FakeDataSource)ctx.getBean(FakeDataSource.class);
+		
+		System.out.println("User Nme: " + fakeDataSource.getUser());
+		System.out.println("Passsword: " + fakeDataSource.getPassword());
+		System.out.println("Url: " + fakeDataSource.getUrl());
 	}
 
 }
