@@ -12,15 +12,7 @@ import software.jsj.examplebeans.FakeDataSource;
 import software.jsj.examplebeans.FakeJmsBroker;
 
 @Configuration
-//@PropertySource({"classpath:datasource.properties", "classpath:jms.properties"})
-@PropertySources({
-  @PropertySource("classpath:datasource.properties"),
-  @PropertySource("classpath:jms.properties")
-})
 public class PropertyConfig {
-  
-  @Autowired
-  Environment env;
   
   @Value("${jsj.username}")
   String user;
@@ -43,9 +35,7 @@ public class PropertyConfig {
   @Bean
   public FakeDataSource fakeDataSource() {
     FakeDataSource fakeDataSource = new FakeDataSource();
-    //fakeDataSource.setUser(user);
-    //set this property either in Eclipse env variables, or OS env variables.
-    fakeDataSource.setUser(env.getProperty("ENV_USERNAME"));  
+    fakeDataSource.setUser(user);
     fakeDataSource.setPassword(password);
     fakeDataSource.setUrl(url);
     return fakeDataSource;
@@ -61,12 +51,12 @@ public class PropertyConfig {
   }
   
   //Get this bean onto the classpath so that Spring can wire everything up for us
-  @Bean
+  /*@Bean
   public static PropertySourcesPlaceholderConfigurer properties() {
     PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer = new PropertySourcesPlaceholderConfigurer();
     
     return propertySourcesPlaceholderConfigurer;
     
-  }
+  }*/
 
 }
