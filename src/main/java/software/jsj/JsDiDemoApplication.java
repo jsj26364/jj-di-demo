@@ -25,7 +25,7 @@ public class JsDiDemoApplication {
 		
 		FakeDataSource fakeDataSource = (FakeDataSource)ctx.getBean(FakeDataSource.class);
 		
-		System.out.println("User Nme: " + fakeDataSource.getUser());
+		System.out.println("User Name: " + fakeDataSource.getUser());
 		System.out.println("Passsword: " + fakeDataSource.getPassword());
 		System.out.println("Url: " + fakeDataSource.getUrl());
 	}

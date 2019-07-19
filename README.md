@@ -9,3 +9,4 @@ Example code using Spring 5
 4. Default profile
 5. Using factory beans
 6. Externalizing properties
+7. Spring Environment Properties
