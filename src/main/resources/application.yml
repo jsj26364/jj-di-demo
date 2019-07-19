@@ -1,0 +1,11 @@
+
+jsj:
+  username: John
+  password: Password123
+  url: www.example.com
+  jms: 
+    username: Gollum
+    password: GollumPassword99
+    url: www.dictionary.example.com
+
+ 
